@@ -18,8 +18,13 @@ public class ProductoFisico extends Producto{
         }
         this.peso=peso;
     }
-
-    public double costeEnvio(String paisDestino){
+    /**
+     * Calcula el coste de envio del producto
+     * @param paisDestino Pais de destino del producto
+     * @return Coste de envio del producto
+     * @throws IllegalArgumentException Si el pais de destino es nulo o esta vacio
+     */
+    public static double costeEnvio(double peso,String paisDestino){
         if(paisDestino==null||paisDestino.isBlank())
             throw new IllegalArgumentException("El pais no puede ser nulo o estar vacio");
         double costePeso= peso*0.1;
