@@ -32,6 +32,12 @@ public class Pedido {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
+    public List<Producto> getProductos() {
+        return this.productos;
+    }
+    public Map<Integer, Integer> getCantidades() {
+        return this.cantidades;
+    }
 
     /**
      * Añade un producto al pedido
@@ -104,13 +110,9 @@ public class Pedido {
     /**
      * Suma los precios de los productos del pedido
      * @return total del pedido
-     * @throws NullPointerException si el cliente es null
      * @throws IllegalArgumentException si el pedido no contiene productos
      */
-    public double calcularTotal() throws NullPointerException, IllegalArgumentException{
-        if(cliente==null){
-            throw new NullPointerException("Cliente no puede ser null");
-        }
+    public double calcularTotal() throws IllegalArgumentException{
         if(productos.isEmpty()){
             throw new IllegalArgumentException("El pedido no contiene productos");
         }
@@ -153,7 +155,7 @@ public class Pedido {
         double suma=0;
         for (Producto producto : productos) {
             if(producto instanceof ProductoDigital productoDigital){
-                suma+=productoDigital.aplicarIVA(iva);
+                suma+=productoDigital.aplicarIVA(iva)*cantidades.get(producto.getId());
             }
         }
         return suma;
