@@ -1,12 +1,14 @@
 package com.daw;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Factura {
-    int codigoFactura;
-    Date fechaEmision;
-    double totalNeto;
-    double totalIva;
-    double totalEnvio;
-    double totalFinal;
+    public int codigoFactura;
+    public LocalDate fechaEmision;
+    public double totalNeto;
+    public double totalIva;
+    public double totalEnvio;
+    public double totalFinal;
+
+
 }
