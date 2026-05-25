@@ -3,7 +3,14 @@ package com.daw;
 import java.time.LocalDate;
 
 public class Tienda {
-    public Factura realizarVenta(Cliente c, Pedido p){
+    /**
+     * Realiza una venta
+     * @param c Cliente
+     * @param p Pedido
+     * @return Factura generada
+     * @throws IllegalArgumentException si el cliente o el pedido es nulo
+     */
+    public Factura realizarVenta(Cliente c, Pedido p) throws IllegalArgumentException{
         if(c==null||p==null){
             throw new IllegalArgumentException("Cliente y pedido no pueden ser nulos");
         }
@@ -14,7 +21,8 @@ public class Tienda {
         f.totalNeto=p.calcularTotal();
         f.totalEnvio=p.calcularEnvio(c.getPais());
         f.totalIva=p.calcularIva("GENERAL");
-        f.totalFinal=f.totalNeto+f.totalEnvio+f.totalIva;
+        f.descuento=c.obtenerDescuento();
+        f.totalFinal=f.totalNeto+f.totalEnvio+f.totalIva-f.descuento;
         return f;
     }
 }

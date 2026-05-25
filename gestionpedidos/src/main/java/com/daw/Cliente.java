@@ -42,9 +42,6 @@ public class Cliente {
         return this.esVip;
     }
 
-    public boolean getEsVip() {
-        return this.esVip;
-    }
 
     public void setEsVip(boolean esVip) {
         this.esVip = esVip;

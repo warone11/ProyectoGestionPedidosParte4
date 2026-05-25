@@ -28,12 +28,11 @@ public class ProductoFisico extends Producto{
         if(paisDestino==null||paisDestino.isBlank())
             throw new IllegalArgumentException("El pais no puede ser nulo o estar vacio");
         double costePeso= peso*0.1;
-        switch (paisDestino.toLowerCase()) {
-            case "españa": return 0;
-            case "francia","portugal","italia": return 5+costePeso;
-            default:
-                return 10+costePeso;
-        }
+        return switch (paisDestino.toLowerCase()) {
+            case "españa" -> costePeso;
+            case "francia", "portugal", "italia" -> 5+costePeso;
+            default -> 10+costePeso;
+        };
     }
 
     public double getPeso() {
