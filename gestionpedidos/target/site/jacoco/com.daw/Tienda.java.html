@@ -15,17 +15,18 @@ import java.time.LocalDate;
 <span class="fc" id="L15">            throw new IllegalArgumentException(&quot;Cliente y pedido no pueden ser nulos&quot;);</span>
         }
 <span class="nc" id="L17">        Factura f = new Factura();</span>
-<span class="nc" id="L18">        f.codigoFactura=&quot;FACT-&quot;+f.fechaEmision.toString()+&quot; &quot;+Math.random()*10000000;</span>
+        
         //fecha actual
 <span class="nc" id="L20">        f.fechaEmision=LocalDate.now();</span>
-<span class="nc" id="L21">        f.totalNeto=p.calcularTotal();</span>
-<span class="nc" id="L22">        f.totalEnvio=p.calcularEnvio(c.getPais());</span>
-<span class="nc" id="L23">        f.totalIva=p.calcularIva(&quot;GENERAL&quot;);</span>
+<span class="nc" id="L21">        f.codigoFactura=&quot;FACT-&quot;+f.fechaEmision.toString()+&quot; &quot;+Math.random()*10000000;</span>
+<span class="nc" id="L22">        f.totalNeto=p.calcularTotal();</span>
+<span class="nc" id="L23">        f.totalEnvio=p.calcularEnvio(c.getPais());</span>
+<span class="nc" id="L24">        f.totalIva=p.calcularIva(&quot;GENERAL&quot;);</span>
         
-<span class="nc" id="L25">        f.totalFinal=f.totalNeto+f.totalEnvio+f.totalIva;</span>
-<span class="nc" id="L26">        f.descuento=c.obtenerDescuento()*f.totalFinal;</span>
-<span class="nc" id="L27">        f.totalFinal-=f.descuento;</span>
-<span class="nc" id="L28">        return f;</span>
+<span class="nc" id="L26">        f.totalFinal=f.totalNeto+f.totalEnvio+f.totalIva;</span>
+<span class="nc" id="L27">        f.descuento=c.obtenerDescuento()*f.totalFinal;</span>
+<span class="nc" id="L28">        f.totalFinal-=f.descuento;</span>
+<span class="nc" id="L29">        return f;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
