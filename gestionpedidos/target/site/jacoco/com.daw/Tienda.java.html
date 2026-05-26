@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Tienda.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gestionpedidos</a> &gt; <a href="index.source.html" class="el_package">com.daw</a> &gt; <span class="el_source">Tienda.java</span></div><h1>Tienda.java</h1><pre class="source lang-java linenums">package com.daw;
+
+import java.time.LocalDate;
+
+<span class="fc" id="L5">public class Tienda {</span>
+    /**
+     * Realiza una venta
+     * @param c Cliente
+     * @param p Pedido
+     * @return Factura generada
+     * @throws IllegalArgumentException si el cliente o el pedido es nulo
+     */
+    public Factura realizarVenta(Cliente c, Pedido p) throws IllegalArgumentException{
+<span class="pc bpc" id="L14" title="1 of 4 branches missed.">        if(c==null||p==null){</span>
+<span class="fc" id="L15">            throw new IllegalArgumentException(&quot;Cliente y pedido no pueden ser nulos&quot;);</span>
+        }
+<span class="nc" id="L17">        Factura f = new Factura();</span>
+<span class="nc" id="L18">        f.codigoFactura=&quot;FACT-&quot;+f.fechaEmision.toString()+&quot; &quot;+Math.random()*10000000;</span>
+        //fecha actual
+<span class="nc" id="L20">        f.fechaEmision=LocalDate.now();</span>
+<span class="nc" id="L21">        f.totalNeto=p.calcularTotal();</span>
+<span class="nc" id="L22">        f.totalEnvio=p.calcularEnvio(c.getPais());</span>
+<span class="nc" id="L23">        f.totalIva=p.calcularIva(&quot;GENERAL&quot;);</span>
+        
+<span class="nc" id="L25">        f.totalFinal=f.totalNeto+f.totalEnvio+f.totalIva;</span>
+<span class="nc" id="L26">        f.descuento=c.obtenerDescuento()*f.totalFinal;</span>
+<span class="nc" id="L27">        f.totalFinal-=f.descuento;</span>
+<span class="nc" id="L28">        return f;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

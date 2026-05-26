@@ -58,6 +58,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
   </properties>
-  <testcase classname="com.daw.ProductoDigitalTest" name="com.daw.ProductoDigitalTest.testConstructor" time="0"/>
   <testcase classname="com.daw.ProductoDigitalTest" name="com.daw.ProductoDigitalTest.testAplicarIVATipoIvaIncorrecto" time="0"/>
+  <testcase classname="com.daw.ProductoDigitalTest" name="com.daw.ProductoDigitalTest.testConstructor" time="0"/>
 </testsuite>

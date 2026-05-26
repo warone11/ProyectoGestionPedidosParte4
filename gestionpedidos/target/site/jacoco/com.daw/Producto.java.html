@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Producto.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gestionpedidos</a> &gt; <a href="index.source.html" class="el_package">com.daw</a> &gt; <span class="el_source">Producto.java</span></div><h1>Producto.java</h1><pre class="source lang-java linenums">package com.daw;
+
+public class Producto {
+    private int id;
+    private String nombre;
+    private double precioBase;
+    /**
+     * Constructor de la clase Producto
+     * @param id Identificador del producto
+     * @param nombre Nombre del producto
+     * @param precioBase Precio base del producto
+     * @throws IllegalArgumentException Si el precio base es negativo
+     */
+<span class="fc" id="L14">    public Producto(int id, String nombre, double precioBase) throws IllegalArgumentException{</span>
+<span class="fc" id="L15">        this.id = id;</span>
+<span class="fc" id="L16">        this.nombre = nombre;</span>
+<span class="fc bfc" id="L17" title="All 2 branches covered.">        if(precioBase &lt; 0)</span>
+<span class="fc" id="L18">            throw new IllegalArgumentException(&quot;El precio base no puede ser negativo&quot;);</span>
+<span class="fc" id="L19">        this.precioBase = precioBase;</span>
+<span class="fc" id="L20">    }</span>
+
+    public int getId() {
+<span class="fc" id="L23">        return this.id;</span>
+    }
+
+    public void setId(int id) {
+<span class="fc" id="L27">        this.id = id;</span>
+<span class="fc" id="L28">    }</span>
+
+    public String getNombre() {
+<span class="fc" id="L31">        return this.nombre;</span>
+    }
+
+    public void setNombre(String nombre) {
+<span class="fc" id="L35">        this.nombre = nombre;</span>
+<span class="fc" id="L36">    }</span>
+
+    public double getPrecioBase() {
+<span class="fc" id="L39">        return this.precioBase;</span>
+    }
+
+    public void setPrecioBase(double precioBase)throws IllegalArgumentException {
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        if(precioBase &lt; 0)</span>
+<span class="fc" id="L44">            throw new IllegalArgumentException(&quot;El precio base no puede ser negativo&quot;);</span>
+<span class="fc" id="L45">        this.precioBase = precioBase;</span>
+<span class="fc" id="L46">    }</span>
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

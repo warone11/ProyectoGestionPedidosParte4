@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ProductoFisico.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gestionpedidos</a> &gt; <a href="index.source.html" class="el_package">com.daw</a> &gt; <span class="el_source">ProductoFisico.java</span></div><h1>ProductoFisico.java</h1><pre class="source lang-java linenums">package com.daw;
+
+public class ProductoFisico extends Producto{
+    private double peso;
+    /**
+     * Constructor de la clase ProductoFisico
+     * @param id Identificador del producto
+     * @param nombre Nombre del producto
+     * @param precioBase Precio base del producto
+     * @param peso Peso del producto 
+     * @throws IllegalArgumentException Si el precio base es negativo
+     * @throws IllegalArgumentException Si el peso es negativo
+     */
+    public ProductoFisico(int id, String nombre, double precioBase, double peso) throws IllegalArgumentException {
+<span class="fc" id="L15">        super(id, nombre, precioBase);</span>
+<span class="fc bfc" id="L16" title="All 2 branches covered.">        if(peso&lt;0){</span>
+<span class="fc" id="L17">            throw new IllegalArgumentException(&quot;El peso no puede ser negativo&quot;);</span>
+        }
+<span class="fc" id="L19">        this.peso=peso;</span>
+<span class="fc" id="L20">    }</span>
+    /**
+     * Calcula el coste de envio del producto
+     * @param paisDestino Pais de destino del producto
+     * @return Coste de envio del producto
+     * @throws IllegalArgumentException Si el pais de destino es nulo o esta vacio
+     */
+    public static double costeEnvio(double peso,String paisDestino){
+<span class="fc bfc" id="L28" title="All 4 branches covered.">        if(paisDestino==null||paisDestino.isBlank())</span>
+<span class="fc" id="L29">            throw new IllegalArgumentException(&quot;El pais no puede ser nulo o estar vacio&quot;);</span>
+<span class="fc" id="L30">        double costePeso= peso*0.1;</span>
+<span class="fc bfc" id="L31" title="All 3 branches covered.">        return switch (paisDestino.toLowerCase()) {</span>
+<span class="fc" id="L32">            case &quot;españa&quot; -&gt; costePeso;</span>
+<span class="fc" id="L33">            case &quot;francia&quot;, &quot;portugal&quot;, &quot;italia&quot; -&gt; 5+costePeso;</span>
+<span class="fc" id="L34">            default -&gt; 10+costePeso;</span>
+        };
+    }
+
+    public double getPeso() {
+<span class="fc" id="L39">        return this.peso;</span>
+    }
+
+    public void setPeso(double peso)throws IllegalArgumentException {
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        if(peso&lt;0)</span>
+<span class="fc" id="L44">            throw new IllegalArgumentException(&quot;El peso no puede ser negativo&quot;);</span>
+<span class="fc" id="L45">        this.peso = peso;</span>
+<span class="fc" id="L46">    }</span>
+
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

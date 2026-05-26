@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ProductoDigital.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gestionpedidos</a> &gt; <a href="index.source.html" class="el_package">com.daw</a> &gt; <span class="el_source">ProductoDigital.java</span></div><h1>ProductoDigital.java</h1><pre class="source lang-java linenums">package com.daw;
+
+public class ProductoDigital extends Producto{
+    /**
+     * Constructor de la clase ProductoDigital
+     * @param id Identificador del producto
+     * @param nombre Nombre del producto
+     * @param precioBase Precio base del producto
+     * @throws IllegalArgumentException Si el precio base es negativo
+     */
+    public ProductoDigital(int id, String nombre, double precioBase) throws IllegalArgumentException{
+<span class="fc" id="L12">        super(id, nombre, precioBase);</span>
+<span class="fc" id="L13">    }</span>
+    /**
+     * Método para aplicar el IVA al precio base del producto
+     * @param tipoIva Tipo de IVA a aplicar: &quot;GENERAL&quot;, &quot;REDUCIDO&quot; o &quot;SUPER&quot;
+     * @return Valor del IVA aplicado
+     * @throws IllegalArgumentException Si el tipo de IVA no coincide
+     */
+    public double aplicarIVA(String tipoIva)throws IllegalArgumentException{
+<span class="pc bpc" id="L21" title="2 of 4 branches missed.">        switch (tipoIva) {</span>
+            case &quot;GENERAL&quot; -&gt; {
+<span class="fc" id="L23">                return getPrecioBase()*0.21;</span>
+            }
+            case &quot;REDUCIDO&quot; -&gt; {
+<span class="nc" id="L26">                return getPrecioBase()*0.1;</span>
+            }
+            case &quot;SUPER&quot; -&gt; {
+<span class="nc" id="L29">                return getPrecioBase()*0.04;</span>
+            }
+<span class="fc" id="L31">            default -&gt; throw new IllegalArgumentException(&quot;Tipo de IVA no válido&quot;);</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
