@@ -10,8 +10,8 @@ public class Pedido {
     private Cliente cliente;
     private List<Producto> productos;
     private Map<Integer,Integer> cantidades;
-    public final static String PRODUCT_NULL_EXCEPTION_MESSAGE = "Producto no puede ser null";
-    public final static String PRODUCT_LIST_EMPTY_EXCEPTION_MESSAGE = "La lista de productos no puede estar vacía";
+    public static final String PRODUCT_NULL_EXCEPTION_MESSAGE = "Producto no puede ser null";
+    public static final String PRODUCT_LIST_EMPTY_EXCEPTION_MESSAGE = "La lista de productos no puede estar vacía";
     public Pedido(int idPedido, Cliente cliente){
         this.idPedido = idPedido;
         this.cliente = cliente;

@@ -60,7 +60,7 @@
   </properties>
   <testcase classname="com.daw.ProductoFisicoTest" name="com.daw.ProductoFisicoTest.testGettersSetters" time="0"/>
   <testcase classname="com.daw.ProductoFisicoTest" name="com.daw.ProductoFisicoTest.testConstructor" time="0"/>
-  <testcase classname="com.daw.ProductoFisicoTest" name="com.daw.ProductoFisicoTest.testConstructorExcepciones" time="0"/>
+  <testcase classname="com.daw.ProductoFisicoTest" name="com.daw.ProductoFisicoTest.testConstructorExcepciones" time="0.001"/>
   <testcase classname="com.daw.ProductoFisicoTest" name="com.daw.ProductoFisicoTest.testCosteEnvio" time="0"/>
-  <testcase classname="com.daw.ProductoFisicoTest" name="com.daw.ProductoFisicoTest.testCosteEnvioExcepciones" time="0.001"/>
+  <testcase classname="com.daw.ProductoFisicoTest" name="com.daw.ProductoFisicoTest.testCosteEnvioExcepciones" time="0"/>
 </testsuite>

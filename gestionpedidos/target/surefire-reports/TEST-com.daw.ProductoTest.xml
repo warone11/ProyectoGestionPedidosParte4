@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="com.daw.ProductoTest" time="0.005" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="com.daw.ProductoTest" time="0.003" errors="0" skipped="0">
   <properties>
     <property name="jansi.mode" value="force"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -58,7 +58,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
   </properties>
-  <testcase classname="com.daw.ProductoTest" name="com.daw.ProductoTest.testGettersSetters" time="0.005"/>
+  <testcase classname="com.daw.ProductoTest" name="com.daw.ProductoTest.testGettersSetters" time="0.003"/>
   <testcase classname="com.daw.ProductoTest" name="com.daw.ProductoTest.testConstructor" time="0"/>
   <testcase classname="com.daw.ProductoTest" name="com.daw.ProductoTest.testConstructorPrecioNegativo" time="0"/>
 </testsuite>

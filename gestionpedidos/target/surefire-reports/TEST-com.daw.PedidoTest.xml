@@ -59,13 +59,13 @@
     <property name="sun.cpu.endian" value="little"/>
   </properties>
   <testcase classname="com.daw.PedidoTest" name="com.daw.PedidoTest.testGettersSetters" time="0"/>
-  <testcase classname="com.daw.PedidoTest" name="com.daw.PedidoTest.testConstructor" time="0"/>
-  <testcase classname="com.daw.PedidoTest" name="com.daw.PedidoTest.testAddProducto" time="0"/>
+  <testcase classname="com.daw.PedidoTest" name="com.daw.PedidoTest.testConstructor" time="0.001"/>
   <testcase classname="com.daw.PedidoTest" name="com.daw.PedidoTest.testAddProductoExistente" time="0"/>
   <testcase classname="com.daw.PedidoTest" name="com.daw.PedidoTest.testRemoveProducto" time="0"/>
-  <testcase classname="com.daw.PedidoTest" name="com.daw.PedidoTest.testExcepciones" time="0.001"/>
+  <testcase classname="com.daw.PedidoTest" name="com.daw.PedidoTest.testExcepciones" time="0"/>
   <testcase classname="com.daw.PedidoTest" name="com.daw.PedidoTest.testCalculoPrecioTotal" time="0"/>
   <testcase classname="com.daw.PedidoTest" name="com.daw.PedidoTest.testCalculoEnvio" time="0"/>
-  <testcase classname="com.daw.PedidoTest" name="com.daw.PedidoTest.testCalculoIVA" time="0.001"/>
-  <testcase classname="com.daw.PedidoTest" name="com.daw.PedidoTest.testCalculosFallo" time="0"/>
+  <testcase classname="com.daw.PedidoTest" name="com.daw.PedidoTest.testCalculoIVA" time="0"/>
+  <testcase classname="com.daw.PedidoTest" name="com.daw.PedidoTest.testCalculosFallo" time="0.001"/>
+  <testcase classname="com.daw.PedidoTest" name="com.daw.PedidoTest.testAddProducto" time="0"/>
 </testsuite>
