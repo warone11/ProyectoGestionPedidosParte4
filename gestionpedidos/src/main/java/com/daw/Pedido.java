@@ -10,6 +10,8 @@ public class Pedido {
     private Cliente cliente;
     private List<Producto> productos;
     private Map<Integer,Integer> cantidades;
+    public final static String PRODUCT_NULL_EXCEPTION_MESSAGE = "Producto no puede ser null";
+    public final static String PRODUCT_LIST_EMPTY_EXCEPTION_MESSAGE = "La lista de productos no puede estar vacía";
     public Pedido(int idPedido, Cliente cliente){
         this.idPedido = idPedido;
         this.cliente = cliente;
@@ -48,7 +50,7 @@ public class Pedido {
      */
     public void addProducto(Producto producto, int cantidad)throws IllegalArgumentException{
         if(producto==null){
-            throw new IllegalArgumentException("Producto no puede ser null");
+            throw new IllegalArgumentException(PRODUCT_NULL_EXCEPTION_MESSAGE);
         }
         if(cantidad<=0){
             throw new IllegalArgumentException(cantidad+" no es una cantidad válida, debe ser mayor que 0");
@@ -74,7 +76,7 @@ public class Pedido {
      */
     public void quitarProducto(Producto producto, int cantidad) throws IllegalArgumentException{
         if(producto==null){
-            throw new IllegalArgumentException("Producto no puede ser null");
+            throw new IllegalArgumentException(PRODUCT_NULL_EXCEPTION_MESSAGE);
         }
         if(cantidad<=0){
             throw new IllegalArgumentException(cantidad+" no es una cantidad válida, debe ser mayor que 0");
@@ -97,7 +99,7 @@ public class Pedido {
      */
     public void quitarProducto(Producto producto){
         if(producto==null){
-            throw new IllegalArgumentException("Producto no puede ser null");
+            throw new IllegalArgumentException(PRODUCT_NULL_EXCEPTION_MESSAGE);
         }
         if(productos.contains(producto)){
             cantidades.remove(producto.getId());
@@ -114,7 +116,7 @@ public class Pedido {
      */
     public double calcularTotal() throws IllegalArgumentException{
         if(productos.isEmpty()){
-            throw new IllegalArgumentException("El pedido no contiene productos");
+            throw new IllegalArgumentException(PRODUCT_LIST_EMPTY_EXCEPTION_MESSAGE);
         }
         double suma=0;
         
@@ -133,7 +135,7 @@ public class Pedido {
      */
     public double calcularEnvio(String pais)throws IllegalArgumentException{
         if(productos.isEmpty()){
-            throw new IllegalArgumentException("El pedido no contiene productos");
+            throw new IllegalArgumentException(PRODUCT_LIST_EMPTY_EXCEPTION_MESSAGE);
         }
         double peso =0;
         for (Producto producto : productos) {
@@ -150,7 +152,7 @@ public class Pedido {
      */
     public double calcularIva(String iva) throws IllegalArgumentException{
         if(productos.isEmpty()){
-            throw new IllegalArgumentException("El pedido no contiene productos");
+            throw new IllegalArgumentException(PRODUCT_LIST_EMPTY_EXCEPTION_MESSAGE);
         }
         double suma=0;
         for (Producto producto : productos) {

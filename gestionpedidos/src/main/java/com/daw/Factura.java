@@ -3,7 +3,7 @@ package com.daw;
 import java.time.LocalDate;
 
 public class Factura {
-    public int codigoFactura;
+    public String codigoFactura;
     public LocalDate fechaEmision;
     public double totalNeto;
     public double totalIva;

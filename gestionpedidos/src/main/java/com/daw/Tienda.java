@@ -15,7 +15,7 @@ public class Tienda {
             throw new IllegalArgumentException("Cliente y pedido no pueden ser nulos");
         }
         Factura f = new Factura();
-        f.codigoFactura=(int)(Math.random()*1000000000);
+        f.codigoFactura="FACT-"+f.fechaEmision.toString()+" "+Math.random()*10000000;
         //fecha actual
         f.fechaEmision=LocalDate.now();
         f.totalNeto=p.calcularTotal();
