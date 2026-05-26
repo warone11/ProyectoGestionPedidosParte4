@@ -1,12 +1,12 @@
 package com.daw;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class TiendaTest {
     @DisplayName("Test de Realizar venta")
-    @Test
     public void testRealizarVenta() {
         Tienda t= new Tienda();
         Cliente c= new Cliente(3, "Juan", 6, true, "portugal");
@@ -18,8 +18,18 @@ public class TiendaTest {
         assertEquals(69,f.totalNeto,0.01);
         assertEquals(7,f.totalEnvio,0.01);
         assertEquals(2.94, f.totalIva, 0.01);
-        
+        assertEquals(4.73,f.descuento, 0.01);
+        assertEquals(74.20, f.totalFinal,0.01);
 
+    }
+    @DisplayName("Realizar Venta falla con valores nulos")
+    @Test
+    public void testRealizarVentaFallos(){
+        Tienda t= new Tienda();
+        Cliente c= new Cliente(3, "Juan", 6, true, "portugal");
+        Pedido p = new Pedido(4, c);
+        assertThrows(IllegalArgumentException.class, ()->t.realizarVenta(null, p));
+        assertThrows(IllegalArgumentException.class, ()->t.realizarVenta(c, null));
     }
     
 }

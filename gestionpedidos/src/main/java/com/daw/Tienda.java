@@ -21,8 +21,10 @@ public class Tienda {
         f.totalNeto=p.calcularTotal();
         f.totalEnvio=p.calcularEnvio(c.getPais());
         f.totalIva=p.calcularIva("GENERAL");
-        f.descuento=c.obtenerDescuento();
-        f.totalFinal=f.totalNeto+f.totalEnvio+f.totalIva-f.descuento;
+        
+        f.totalFinal=f.totalNeto+f.totalEnvio+f.totalIva;
+        f.descuento=c.obtenerDescuento()*f.totalFinal;
+        f.totalFinal-=f.descuento;
         return f;
     }
 }
